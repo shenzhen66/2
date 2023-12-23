@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>恐怖奶奶1</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            overflow-x: scroll;
+            scroll-snap-type: x mandatory;
+            width: 99%;
+            margin: 0 auto;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .card {
+            flex: 0 0 calc(100% - 5px); /* 添加间隔 */
+            scroll-snap-align: start;
+            max-width: 100%;
+            height: 120vh;
+            width: 300px; /* 调整卡片宽度 */
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin: 0 auto;
+            margin-top: 0px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 64px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            line-height: 1.5em;
+            font-size: 3.2em;
+            margin-bottom: 20px;
+        }
+
+        .top-card {
+            position: relative;
+        }
+
+        .top-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cardt {
+            max-width: 800%; /* 调整卡片宽度 */
+            width: 850px; /* 调整卡片宽度 */
+            padding: 25px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin: 0 auto;
+            margin-top: 25px;
+        }
+
+        .button {
+            display: block;
+            width: 90%;
+            height: 130px;
+            margin: 20px auto 0;
+            background-color: #ff6a00;
+            color: #fff;
+            text-align: center;
+            line-height: 130px;
+            font-size: 3.2em;
+            border-radius: 10px;
+            box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+            transition: all 0.2s ease;
+        }
+
+        .button:hover {
+            background-color: #ff8c5a;
+        }
+
+        .video-container {
+            width: 99%;
+            height: 800px; /* 设置适当的高度 */
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+            .video-container video {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            
+            .image-container {
+                width: 100%;
+                margin-top: 20px;
+                border-radius: 10px;
+                box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+                overflow-x: scroll;
+                white-space: nowrap;
+            }
+            
+            .image-container img {
+                display: inline-block;
+                width: 90%;
+                margin: 10px;
+                border-radius: 10px;
+                box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+            }
+            
+            .card img {
+                max-width: 100%;
+                height: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div id="card1" class="card top-card">
+                <h1>首页</h1>
+                <div class="cardt" id="cardt">
+                    <img src="https://api.vvhan.com/api/ipCard?tip=Hello 欢迎使用" alt="卡片图片">
+                </div>
+                <h2>游戏名:恐怖奶奶中文菜单绘制</h2>
+                <p>恐怖奶奶1中文版这是一款恐怖风格的冒险闯关手游，丰富的玩法内容，各种不同的副本关卡等你挑战，恐怖的游戏氛围，多样的关卡等你挑战，多种不同的道具等你获取使用，惊悚的剧情故事为你呈现，各种不同的关卡等你挑战，欢迎下载尝试。</p>
+                <p>当前版本:1,7</p>
+                <div id="showcase-container" class="image-container">
+                    <img src="https://cccimg.com/view.php/2c7a1272c68d1f8188f27da06622bdab.png" alt="游戏截图" class="image">
+                    <img src="https://cccimg.com/view.php/c5a0df74de0320be7f11b63a0afa70d4.png" alt="游戏截图" class="image">
+                </div>
+                <a href="https://www.123pan.com/s/v1z7Vv-WuHod.html" class="button" id="download-button" download>下载游戏</a>
+            </div>
+            <div id="card2" class="card">
+                <h1>服务</h1>
+                <p>服务内容...</p>
+            </div>
+            <div id="card3" class="card">
+                <h1>关于</h1>
+                <p>关于内容...</p>
+            </div>
+        </div>
+
+        <script>
+            const card = document.getElementById('cardt');
+            const audio = new Audio();
+            let isPlaying = false;
+
+            card.addEventListener('click', function() {
+                if (isPlaying) {
+                    audio.pause();
+                    isPlaying = false;
+                } else {
+                    audio.src = 'https://api.vvhan.com/api/rand.music?sort=热歌榜';
+                    audio.play();
+                    isPlaying = true;
+                }
+            });
+            
+            const showcaseContainer = document.getElementById('showcase-container');
+            const showVideo = false; // 根据需要设置为 true 或 false，true为视频显示，false为图片显示
+
+            if (showVideo) {
+                showcaseContainer.innerHTML = `
+                    <div class="video-container">
+                        <video controls>
+                            <source src="https://static.blued.com/videos/ticktocks/2826544/2826544_1686239383.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                `;
+            }
+            
+            window.addEventListener('DOMContentLoaded', function() {
+                const container = document.querySelector('.container');
+                const cards = document.querySelectorAll('.card');
+                const cardWidth = cards[0].offsetWidth; // 获取卡片宽度，包括间隔
+                let currentCardIndex = 0;
+
+                container.addEventListener('wheel', function(event) {
+                    if (event.deltaY < 0 && currentCardIndex > 0) {
+                        // 向上滚动，切换到上一页
+                        currentCardIndex--;
+                    } else if (event.deltaY > 0 && currentCardIndex < cards.length - 1) {
+                        // 向下滚动，切换到下一页
+                        currentCardIndex++;
+                    }
+
+                    // 滚动到当前页
+                    container.scrollTo({
+                        left: cardWidth * currentCardIndex, // 根据卡片宽度和索引计算滚动位置
+                        behavior: 'smooth'
+                    });
+
+                    event.preventDefault();
+                });
+            });
+        </script>
+    </body>
+</html>
